@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREAKING: UN Fast-Forwards Calendar by 6 Days for Gaming Squad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #060b19;
+            color: #f8fafc;
+        }
+        .font-broadcast {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        /* Scrolling News Ticker */
+        @keyframes tickerScroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: tickerScroll 38s linear infinite;
+        }
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+        /* Subtle pulsing red live dot */
+        @keyframes pulseRed {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(0.85); }
+        }
+        .live-dot {
+            animation: pulseRed 1.2s infinite ease-in-out;
+        }
+        /* Dramatic stamp animation */
+        @keyframes stampSlam {
+            0% { transform: scale(3) rotate(-18deg); opacity: 0; }
+            60% { transform: scale(0.92) rotate(-6deg); opacity: 1; }
+            80% { transform: scale(1.04) rotate(-6deg); }
+            100% { transform: scale(1) rotate(-6deg); opacity: 1; }
+        }
+        .stamp-animate {
+            animation: stampSlam 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        /* Custom glass & broadcast glow */
+        .broadcast-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(9, 14, 28, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+        }
+        .gold-border {
+            border-color: rgba(234, 179, 8, 0.45);
+        }
+        /* Floating emoji particle */
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-180px) scale(1.4) rotate(25deg); opacity: 0; }
+        }
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            font-size: 2rem;
+            animation: floatUp 1.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between pb-16 selection:bg-red-600 selection:text-white">
+
+    <!-- Top Network Bar -->
+    <header class="bg-[#0a1128] border-b-4 border-red-600 sticky top-0 z-40 shadow-2xl">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <!-- Network Logo -->
+            <div class="flex items-center gap-3">
+                <div class="bg-red-600 text-white font-broadcast font-bold text-2xl sm:text-3xl px-3 py-1 rounded shadow-lg tracking-wider flex items-center gap-1.5">
+                    <span>GNN</span>
+                    <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-1.5 py-0.5 rounded uppercase">24/7</span>
+                </div>
+                <div>
+                    <div class="text-xs sm:text-sm font-extrabold tracking-widest text-amber-400 uppercase">Global News Network</div>
+                    <div class="text-[11px] text-slate-400 font-medium">Emergency Chronological Broadcast • SAST Feed</div>
+                </div>
+            </div>
+
+            <!-- Live Clock & Status -->
+            <div class="flex items-center gap-3 sm:gap-5">
+                <div class="hidden md:flex items-center gap-2 bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg text-xs">
+                    <span class="text-slate-400">OFFICIAL SAST DATE:</span>
+                    <span id="header-date" class="font-bold text-amber-400 transition-all duration-300">24 NOVEMBER 2026</span>
+                </div>
+                <div class="flex items-center gap-2 bg-red-950/80 border border-red-500/50 px-3 py-1.5 rounded-full">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-500 live-dot"></span>
+                    <span class="text-xs font-black tracking-wider text-red-400 uppercase">LIVE SPECIAL REPORT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urgent Red Breaking Banner -->
+        <div class="bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white py-2 px-4 shadow-inner">
+            <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+                <div class="flex items-center gap-2">
+                    <span class="bg-amber-400 text-slate-950 font-black text-xs px-2 py-0.5 rounded uppercase tracking-wider animate-bounce">BREAKING NEWS</span>
+                    <span class="font-bold text-sm sm:text-base tracking-tight">UN SECURITY COUNCIL &amp; BIPM PASS RESOLUTION #420-GG: "NO MORE WORK EXCUSES"</span>
+                </div>
+                <span class="text-xs font-semibold text-red-100 uppercase tracking-wider">Verified Satire • 100% Legit</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Broadcast Content -->
+    <main class="max-w-6xl mx-auto px-4 py-6 sm:py-8 space-y-8 flex-grow">
+
+        <!-- Custom Friend Name Personalizer Bar -->
+        <section class="bg-slate-900/80 border border-amber-500/30 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
+            <div class="flex items-center gap-3 text-center sm:text-left">
+                <span class="text-2xl">🎯</span>
+                <div>
+                    <h2 class="text-sm font-bold text-amber-400 uppercase tracking-wider">Customize Target Friend's Name</h2>
+                    <p class="text-xs text-slate-300">Type your friend's name below before sending them this link or screenshot!</p>
+                </div>
+            </div>
+            <div class="flex w-full sm:w-auto items-center gap-2">
+                <input
+                    id="friend-name-input"
+                    type="text"
+                    maxlength="28"
+                    placeholder="Enter friend's name..."
+                    value="Bro"
+                    class="w-full sm:w-56 bg-slate-950 border border-slate-700 focus:border-amber-400 focus:outline-none rounded-lg px-3 py-2 text-sm font-semibold text-white placeholder-slate-500"
+                />
+                <button
+                    onclick="applyFriendName()"
+                    class="bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition cursor-pointer whitespace-nowrap shadow-md"
+                >
+                    Update Headline
+                </button>
+            </div>
+        </section>
+
+        <!-- Hero Headline & Broadcast Screen -->
+        <article class="broadcast-card rounded-2xl overflow-hidden border-t-4 border-t-amber-400">
+            <div class="p-6 sm:p-8 lg:p-10 space-y-6">
+                <!-- Category Tag -->
+                <div class="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                    <span class="bg-red-600/20 text-red-400 border border-red-500/40 px-2.5 py-1 rounded">Global Chronology Alert</span>
+                    <span class="bg-blue-600/20 text-blue-300 border border-blue-500/40 px-2.5 py-1 rounded">Geneva / Paris / SAST</span>
+                    <span class="text-slate-400">Updated: Just Now (24 November 2026, 19:22 SAST)</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-broadcast text-3xl sm:text-5xl lg:text-6xl font-bold uppercase leading-[1.08] text-white">
+                    WORLD LEADERS UNANIMOUSLY FAST-FORWARD CALENDAR BY <span class="text-amber-400 underline decoration-red-600 decoration-4 underline-offset-4">6 DAYS</span> SO <span class="friend-target text-red-500">BRO</span> CAN FINALLY HOP ONLINE
+                </h1>
+
+                <p class="text-base sm:text-xl text-slate-300 leading-relaxed max-w-4xl font-medium">
+                    In an unprecedented emergency midnight summit, the <strong class="text-white">United Nations</strong>, the <strong class="text-white">International Bureau of Weights and Measures (BIPM)</strong>, and every major world superpower voted 193–0 to officially delete the next six days from human history. Effective immediately across South Africa (SAST) and all global time zones, <span class="line-through text-slate-500">Wednesday, 18 November 2026</span> has been skipped directly to <strong class="text-amber-400">Tuesday, 24 November 2026</strong>.
+                </p>
+
+                <!-- Visual Date Jump Graphic Box -->
+                <div class="bg-gradient-to-r from-[#0c1633] via-[#13224d] to-[#0c1633] border border-amber-400/40 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+                    <div class="absolute top-2 right-3 text-[10px] font-mono text-amber-400/70 uppercase">ATOMIC CLOCK OVERRIDE // SAST</div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-11 items-center gap-4 text-center">
+                        <!-- Old Date -->
+                        <div class="md:col-span-4 bg-slate-950/80 border border-red-500/30 rounded-xl p-4 opacity-75">
+                            <div class="text-xs font-bold uppercase tracking-widest text-red-400 mb-1">CANCELLED DATE</div>
+                            <div class="font-broadcast text-2xl sm:text-3xl text-slate-400 line-through">18 NOVEMBER 2026</div>
+                            <div class="text-xs text-slate-500 mt-1">Wednesday • "Too Busy With Work"</div>
+                        </div>
+
+                        <!-- Arrow / Fast Forward Badge -->
+                        <div class="md:col-span-3 flex flex-col items-center justify-center py-2">
+                            <div class="bg-red-600 text-white font-black text-sm sm:text-base px-4 py-1.5 rounded-full shadow-lg shadow-red-600/30 flex items-center gap-1.5 animate-pulse">
+                                <span>⏩ +6 DAYS SKIPPED</span>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-300 mt-2 uppercase tracking-wider">144 Hours Deleted</span>
+                        </div>
+
+                        <!-- New Official Date -->
+                        <div class="md:col-span-4 bg-slate-950 border-2 border-amber-400 rounded-xl p-4 shadow-xl shadow-amber-500/10 relative">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                                CURRENT OFFICIAL DATE
+                            </span>
+                            <div class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1 mt-1">ACTIVE IMMEDIATELY (SAST)</div>
+                            <div class="font-broadcast text-2xl sm:text-3xl text-white">24 NOVEMBER 2026</div>
+                            <div class="text-xs text-amber-300 font-semibold mt-1">Tuesday • Lobby Is Open &amp; Waiting</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Action Buttons -->
+                    <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button
+                            onclick="triggerTimeJumpCelebration()"
+                            class="w-full sm:w-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 active:scale-95 text-white font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center justify-center gap-2 cursor-pointer border border-red-400/40"
+                        >
+                            <span>⚡</span>
+                            <span>CONFIRM TIME-JUMP &amp; SUMMON <span class="friend-target uppercase">BRO</span></span>
+                        </button>
+
+                        <button
+                            onclick="toggleCertificateModal(true)"
+                            class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 active:scale-95 text-amber-400 font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-amber-400/50 transition flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                            <span>📜</span>
+                            <span>View Official UN Patch Notes</span>
+                        </button>
+                    </div>
+
+                    <!-- Live Visual Sound-Effect / Status Toast inside card -->
+                    <div id="sfx-banner" class="hidden mt-5 bg-emerald-950/90 border border-emerald-400 text-emerald-200 px-4 py-3 rounded-xl text-center text-sm font-bold animate-bounce">
+                        🔊 *BZZZZT-WHOOSH!!* GLOBAL ATOMIC CLOCKS SYNCED TO 24 NOVEMBER 2026! <span class="friend-target text-white underline">BRO</span> LEGALLY HAS NO WORK LEFT!
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Two-Column Broadcast Details: Quotes & Timeline Impact -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <!-- Left Column: Official Statements & Quotes (7 cols) -->
+            <section class="lg:col-span-7 broadcast-card rounded-2xl p-6 sm:p-8 space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <h2 class="font-broadcast text-2xl sm:text-3xl font-bold uppercase text-amber-400 flex items-center gap-2">
+                        <span>🎙️</span> Emergency Press Statements
+                    </h2>
+                    <span class="text-xs font-bold text-slate-400 uppercase">Verified Transcripts</span>
+                </div>
+
+                <!-- Quote 1 -->
+                <div class="bg-slate-900/90 border-l-4 border-red-600 rounded-r-xl p-4 sm:p-5 space-y-2">
+                    <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
+                        "Look, the squad has been waiting patiently, and honestly, six days of spreadsheets and emails was holding back global morale. By advancing the calendar from 18 November straight to 24 November 2026, <span class="friend-target font-bold text-amber-400 not-italic">Bro</span>'s work obligations are officially complete. Get on Discord immediately."
+                    </p>
+                    <div class="flex items-center justify-between pt-1">
+                        <span class="text-xs font-extrabold text-white uppercase tracking-wider">— Secretary-General, United Nations Dept. of Squad Priorities</span>
+                        <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Geneva</span>
+                    </div>
+                </div>
+
+                <!-- Quote 2 -->
+                <div class="bg-slate-900/90 border-l-4 border-amber-400 rounded-r-xl p-4 sm:p-5 space-y-2">
+                    <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
+                        "We recalibrated the International Atomic Clock in Paris using pure gamer math. Turns out November 19th through November 23rd were just filler episodes anyway. Everyone in South Africa and worldwide is now legally in Tuesday, 24 November 2026."
+                    </p>
+                    <div class="flex items-center justify-between pt-1">
+                        <span class="text-xs font-extrabold text-white uppercase tracking-wider">— Chief Chronologist, International Bureau of Weights &amp; Measures</span>
+                        <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Paris</span>
+                    </div>
+                </div>
+
+                <!-- Quote 3 -->
+                <div class="bg-slate-900/90 border-l-4 border-blue-500 rounded-r-xl p-4 sm:p-5 space-y-2">
+                    <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed">
+                        "I checked the patch notes myself. Excuses like 'I have work,' 'maybe next week,' or 'give me 6 days' have been permanently nerfed in v2026.11.24. Boot up the PC/console right now."
+                    </p>
+                    <div class="flex items-center justify-between pt-1">
+                        <span class="text-xs font-extrabold text-white uppercase tracking-wider">— Global Esports &amp; Late-Night Lobby Commission</span>
+                        <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">SAST HQ</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: What Happened to the 6 Days & Share Box (5 cols) -->
+            <aside class="lg:col-span-5 space-y-6">
+                <!-- Deleted Days Breakdown -->
+                <div class="broadcast-card rounded-2xl p-6 space-y-4">
+                    <h3 class="font-broadcast text-xl sm:text-2xl font-bold uppercase text-white flex items-center gap-2">
+                        <span>🗓️</span> Official Calendar Audit
+                    </h3>
+                    <p class="text-xs text-slate-400">Status of the 6 days between 18 Nov and 24 Nov 2026:</p>
+
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 line-through">Thu, 19 Nov 2026</span>
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 px-2 py-0.5 rounded">DELETED</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 line-through">Fri, 20 Nov 2026</span>
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 px-2 py-0.5 rounded">SKIPPED</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 line-through">Sat, 21 Nov 2026</span>
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 px-2 py-0.5 rounded">FAST-FORWARDED</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 line-through">Sun, 22 Nov 2026</span>
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 px-2 py-0.5 rounded">BYPASSED</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 line-through">Mon, 23 Nov 2026</span>
+                            <span class="text-xs font-bold text-red-400 bg-red-950/70 px-2 py-0.5 rounded">VAPORIZED</span>
+                        </li>
+                        <li class="flex items-center justify-between bg-emerald-950/60 px-3.5 py-2.5 rounded-lg border border-emerald-500/50">
+                            <span class="font-extrabold text-white">Tue, 24 Nov 2026</span>
+                            <span class="text-xs font-black text-emerald-300 bg-emerald-900/80 px-2 py-0.5 rounded">LIVE NOW • GAME TIME</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Copyable Message Box for WhatsApp / Discord -->
+                <div class="broadcast-card gold-border rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-broadcast text-xl font-bold uppercase text-amber-400">📲 Send Receipt to Friend</h3>
+                        <span class="text-[11px] text-slate-400">WhatsApp / Discord Ready</span>
+                    </div>
+                    <p id="share-text-preview" class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-mono">
+                        🚨 BREAKING NEWS: The UN &amp; World Leaders just unanimously fast-forwarded the global calendar by 6 days—from 18 November 2026 directly to 24 November 2026 (SAST)—so Bro has zero work left and can hop online with the squad tonight. Get on! 🎮
+                    </p>
+                    <button
+                        onclick="copyShareText()"
+                        id="copy-btn"
+                        class="w-full bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-sm py-3 rounded-xl transition cursor-pointer shadow-md"
+                    >
+                        📋 Copy Breaking News Text
+                    </button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Disclaimer Footer -->
+        <footer class="text-center text-xs text-slate-500 pt-4 pb-6 space-y-1">
+            <p class="font-semibold text-slate-400">SATIRE NOTICE: This webpage is a 100% fake, comedic broadcast created strictly to convince your friend to play video games.</p>
+            <p>No actual space-time continuums were harmed in the skipping of 18 November 2026 to 24 November 2026.</p>
+        </footer>
+    </main>
+
+    <!-- Fixed Bottom Scrolling News Ticker -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-[#070d1f] border-t-2 border-amber-400 shadow-2xl flex items-center h-11 overflow-hidden">
+        <div class="bg-red-600 text-white font-broadcast font-bold text-sm sm:text-base px-4 h-full flex items-center uppercase tracking-wider shrink-0 z-10 shadow-lg">
+            LATEST UPDATES
+        </div>
+        <div class="overflow-hidden w-full">
+            <div class="ticker-track text-xs sm:text-sm font-bold text-slate-100 flex items-center gap-8 whitespace-nowrap">
+                <span>🚨 BOSSES FURIOUS AS Q4 DEADLINES VANISH OVERNIGHT</span>
+                <span class="text-amber-400">★</span>
+                <span>🎮 GAMERS WORLDWIDE CELEBRATE INSTANT 6-DAY FAST-FORWARD TO 24 NOVEMBER 2026</span>
+                <span class="text-amber-400">★</span>
+                <span>🔬 SCIENTISTS CONFIRM TIME IS A SOCIAL CONSTRUCT ANYWAY</span>
+                <span class="text-amber-400">★</span>
+                <span>📢 UN ISSUES ARREST WARRANT FOR ANYONE STILL CLAIMING "I'M BUSY WITH WORK"</span>
+                <span class="text-amber-400">★</span>
+                <span>🇿🇦 SOUTH AFRICAN ATOMIC CLOCKS OFFICIALLY LOCKED ON TUESDAY, 24 NOVEMBER 2026 (SAST)</span>
+                <span class="text-amber-400">★</span>
+                <!-- Duplicate items for seamless infinite loop -->
+                <span>🚨 BOSSES FURIOUS AS Q4 DEADLINES VANISH OVERNIGHT</span>
+                <span class="text-amber-400">★</span>
+                <span>🎮 GAMERS WORLDWIDE CELEBRATE INSTANT 6-DAY FAST-FORWARD TO 24 NOVEMBER 2026</span>
+                <span class="text-amber-400">★</span>
+                <span>🔬 SCIENTISTS CONFIRM TIME IS A SOCIAL CONSTRUCT ANYWAY</span>
+                <span class="text-amber-400">★</span>
+                <span>📢 UN ISSUES ARREST WARRANT FOR ANYONE STILL CLAIMING "I'M BUSY WITH WORK"</span>
+                <span class="text-amber-400">★</span>
+                <span>🇿🇦 SOUTH AFRICAN ATOMIC CLOCKS OFFICIALLY LOCKED ON TUESDAY, 24 NOVEMBER 2026 (SAST)</span>
+                <span class="text-amber-400">★</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Official Time-Jump Certificate / Patch Notes Modal -->
+    <div id="certificate-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-[#0d152c] border-2 border-amber-400 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl space-y-5">
+            <button
+                onclick="toggleCertificateModal(false)"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold cursor-pointer"
+                aria-label="Close modal"
+            >
+                ✕
+            </button>
+
+            <div class="border-b border-slate-700 pb-4">
+                <div class="text-xs font-black tracking-widest text-amber-400 uppercase">OFFICIAL CHRONOLOGICAL DECREE</div>
+                <h2 class="font-broadcast text-2xl sm:text-3xl font-bold text-white uppercase mt-1">
+                    GLOBAL CALENDAR PATCH v2026.11.24
+                </h2>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-300">
+                <div class="bg-slate-950/90 p-4 rounded-xl border border-slate-800 space-y-2">
+                    <p><strong class="text-amber-400">Effective Date:</strong> Tuesday, 24 November 2026 (SAST)</p>
+                    <p><strong class="text-amber-400">Replaced Date:</strong> <span class="line-through text-slate-500">Wednesday, 18 November 2026</span></p>
+                    <p><strong class="text-amber-400">Beneficiary:</strong> <span class="friend-target font-bold text-white">Bro</span> &amp; The Boys</p>
+                </div>
+
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider pt-1">Changelog &amp; Balance Adjustments:</h4>
+                <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                    <li>Removed <strong>144 hours</strong> of unnecessary workdays between 18 Nov and 24 Nov 2026.</li>
+                    <li>Fixed a critical bug where <span class="friend-target font-semibold text-white">Bro</span> thought he had to wait 6 days to play online.</li>
+                    <li>Buffed squad lobby readiness by <strong>+500%</strong>.</li>
+                    <li>Automatically marked all pending work tasks as <em>"Done, don't worry about it."</em></li>
+                </ul>
+            </div>
+
+            <div class="pt-2 flex items-center justify-between gap-4">
+                <div class="stamp-animate border-2 border-red-500 text-red-500 font-broadcast font-bold uppercase px-3 py-1 rounded text-sm tracking-widest select-none">
+                    APPROVED BY UN &amp; BIPM
+                </div>
+                <button
+                    onclick="toggleCertificateModal(false); triggerTimeJumpCelebration();"
+                    class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm px-5 py-2.5 rounded-xl cursor-pointer transition"
+                >
+                    Acknowledge &amp; Launch Game
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Updates all occurrences of the friend's name across the broadcast
+        function applyFriendName() {
+            const input = document.getElementById('friend-name-input');
+            const rawName = input.value.trim();
+            const finalName = rawName.length > 0 ? rawName : 'Bro';
+
+            document.querySelectorAll('.friend-target').forEach(el => {
+                el.textContent = finalName;
+            });
+
+            // Update share text preview
+            const sharePreview = document.getElementById('share-text-preview');
+            sharePreview.textContent = `🚨 BREAKING NEWS: The UN & World Leaders just unanimously fast-forwarded the global calendar by 6 days—from 18 November 2026 directly to 24 November 2026 (SAST)—so ${finalName} has zero work left and can hop online with the squad tonight. Get on! 🎮`;
+
+            spawnEmojiBurst(['🎮', '⏩', '🔥', '📢']);
+        }
+
+        // Allow pressing Enter inside the name input
+        document.getElementById('friend-name-input').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                applyFriendName();
+            }
+        });
+
+        // Triggers dramatic visual confirmation & emoji confetti burst
+        function triggerTimeJumpCelebration() {
+            const banner = document.getElementById('sfx-banner');
+            banner.classList.remove('hidden');
+
+            // Flash header date
+            const headerDate = document.getElementById('header-date');
+            headerDate.textContent = '24 NOVEMBER 2026 (CONFIRMED)';
+            headerDate.classList.add('text-emerald-400');
+
+            spawnEmojiBurst(['⏩', '🎉', '🎮', '⚡', '📅', '🏆', '🚀']);
+        }
+
+        // Creates floating celebratory particles without external dependencies
+        function spawnEmojiBurst(emojis) {
+            for (let i = 0; i < 18; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.style.left = (10 + Math.random() * 80) + 'vw';
+                particle.style.top = (45 + Math.random() * 35) + 'vh';
+                particle.style.animationDelay = (Math.random() * 0.25) + 's';
+                document.body.appendChild(particle);
+
+                setTimeout(() => {
+                    particle.remove();
+                }, 1700);
+            }
+        }
+
+        // Opens/closes the UN Patch Notes modal
+        function toggleCertificateModal(show) {
+            const modal = document.getElementById('certificate-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Copies the funny breaking news message using execCommand for iframe compatibility
+        function copyShareText() {
+            const text = document.getElementById('share-text-preview').textContent.trim();
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                const btn = document.getElementById('copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied! Paste in Group Chat Now!';
+                btn.classList.replace('bg-amber-500', 'bg-emerald-400');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.replace('bg-emerald-400', 'bg-amber-500');
+                }, 2500);
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+</html>
